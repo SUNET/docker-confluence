@@ -30,6 +30,7 @@ if [[ "${CONFLUENCE_SHA256_CHECKSUM}" != "$(sha256sum /opt/confluence.tar.gz | c
     exit 1
 fi
 tar -xzf /opt/confluence.tar.gz --directory "${CONFLUENCE_INSTALL}" --strip-components=1 --no-same-owner \
+    && rm -f /opt/confluence.tar.gz \
     && ln -s /usr/share/java/mysql-connector-java.jar /opt/atlassian/confluence/lib/mysql-connector-java.jar \
     && chmod -R 700                       "${CONFLUENCE_INSTALL}/conf" \
     && chmod -R 700                       "${CONFLUENCE_INSTALL}/temp" \
