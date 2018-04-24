@@ -35,5 +35,5 @@ VOLUME ["${CONFLUENCE_INSTALL}", "${CONFLUENCE_HOME}"]
 WORKDIR ${CONFLUENCE_INSTALL}
 
 # Run Atlassian Confluence as a foreground process by default.
-CMD ["/usr/bin/start_atlassian_app.sh"]
+CMD ["/opt/atlassian/atlassian_app.sh"]
 

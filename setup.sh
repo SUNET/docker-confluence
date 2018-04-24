@@ -56,7 +56,7 @@ tar -xzf /opt/confluence.tar.gz --directory "${CONFLUENCE_INSTALL}" --strip-comp
     && sed -i "s/-Xmx[0-9]*m/-Xmx$\{HEAP_MAX\}m/" "${CONFLUENCE_INSTALL}/bin/setenv.sh"
 
 # Create the start up script for Confluence
-cat>/usr/bin/start_atlassian_app.sh<<'EOF'
+cat>/opt/atlassian/atlassian_app.sh<<'EOF'
 #!/bin/bash
 SERVER_XML="$CONFLUENCE_INSTALL/conf/server.xml"
 CURRENT_PROXY_NAME=$(xmlstarlet sel -t -v "Server/Service/Connector[@port="8090"]/@proxyName" "${SERVER_XML}")
@@ -72,4 +72,4 @@ then
 fi
 "${CONFLUENCE_INSTALL}"/bin/catalina.sh run
 EOF
-chmod +x /usr/bin/start_atlassian_app.sh
+chmod +x /opt/atlassian/atlassian_app.sh
