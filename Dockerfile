@@ -1,4 +1,4 @@
-FROM docker.sunet.se/eduix/eduix-base:latest
+FROM docker.sunet.se/eduix/eduix-base:stable
 MAINTAINER Juha Leppälä "juha@eduix.fi"
 
 # Setup useful environment variables
