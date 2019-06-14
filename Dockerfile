@@ -8,8 +8,8 @@ ENV CONFLUENCE_HOME     /var/atlassian/application-data/confluence
 ENV CONFLUENCE_INSTALL  /opt/atlassian/confluence
 ENV HEAP_START          2048
 ENV HEAP_MAX            2048
-ARG CONF_VERSION=6.12.4
-ARG CONFLUENCE_SHA256_CHECKSUM=cb1e9bf6b785317bb3db315e32512c811f3595212567151e060109f7cf018c85
+ARG CONF_VERSION=6.13.4
+ARG CONFLUENCE_SHA256_CHECKSUM=6af32eb3c616656f55f97f8063014a11183b8d6a9d049000275416524456ef9a
 
 LABEL Description="This image is used to start Atlassian Confluence" Vendor="Atlassian" Version="${CONF_VERSION}"
 
