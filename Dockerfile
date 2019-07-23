@@ -1,13 +1,15 @@
+# The tags that are recommended to be used for
+# the base image are: latest, staging, stable
 FROM docker.sunet.se/eduix/eduix-base:stable
-MAINTAINER Juha Leppälä "juha@eduix.fi"
+MAINTAINER Jarkko Leponiemi "jarkko.leponiemi@eduix.fi"
 
 # Setup useful environment variables
 ENV CONFLUENCE_HOME     /var/atlassian/application-data/confluence
 ENV CONFLUENCE_INSTALL  /opt/atlassian/confluence
 ENV HEAP_START          2048
 ENV HEAP_MAX            2048
-ARG CONF_VERSION=6.11.0
-ARG CONFLUENCE_SHA256_CHECKSUM=c27ecd65db2cd121fede5979ca88c4b8ed2d663eeeb245ab3c55b070f91906fb
+ARG CONF_VERSION=6.13.5
+ARG CONFLUENCE_SHA256_CHECKSUM=f1e2de2980be988627183f904856faf9c5fed7288a6c407fb3060aa59b868ebc
 
 LABEL Description="This image is used to start Atlassian Confluence" Vendor="Atlassian" Version="${CONF_VERSION}"
 
