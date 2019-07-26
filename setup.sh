@@ -10,7 +10,7 @@ apt-get update && \
     apt-get -y dist-upgrade && \
     apt-get install -y \
         ssl-cert\
-        libmysql-java\
+        libmariadb-java\
     && apt-get -y autoremove \
     && apt-get autoclean
 
@@ -31,7 +31,7 @@ if [[ "${CONFLUENCE_SHA256_CHECKSUM}" != "$(sha256sum /opt/confluence.tar.gz | c
 fi
 tar -xzf /opt/confluence.tar.gz --directory "${CONFLUENCE_INSTALL}" --strip-components=1 --no-same-owner \
     && rm -f /opt/confluence.tar.gz \
-    && ln -s /usr/share/java/mysql-connector-java.jar /opt/atlassian/confluence/lib/mysql-connector-java.jar \
+    && ln -s /usr/share/java/mariadb-java-client.jar /opt/atlassian/confluence/lib/mariadb-java-client.jar \
     && chmod -R 700                       "${CONFLUENCE_INSTALL}/conf" \
     && chmod -R 700                       "${CONFLUENCE_INSTALL}/temp" \
     && chmod -R 700                       "${CONFLUENCE_INSTALL}/logs" \
