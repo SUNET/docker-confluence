@@ -23,6 +23,7 @@ extra_jobs:
       triggers:
         github_push: false
         cron: "@daily"
+      downstream: []
     - name: docker-confluence-master
       builders:
         - docker
@@ -30,6 +31,7 @@ extra_jobs:
         - "master"
       git:
         branch: master
+      downstream: []
     - name: docker-confluence-staging
       builders:
         - docker
@@ -37,6 +39,7 @@ extra_jobs:
         - "staging"
       git:
         branch: staging
+      downstream: []
     - name: docker-confluence-stable
       builders:
         - docker
@@ -44,3 +47,4 @@ extra_jobs:
         - "stable"
       git:
         branch: stable
+      downstream: []
