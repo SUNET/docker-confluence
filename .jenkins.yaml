@@ -2,25 +2,37 @@ docker_name: eduix/confluence
 docker_tags:
     - "${GIT_LOCAL_BRANCH}"
 docker_skip_tag_as_latest: true
+script:
+  - "echo \"Dummy job for starting branch specific ones\""
 git:
-    branches:
-        - master
-        - stable
-        - staging
-    extensions:
-        checkout_local_branch: true
+  extensions:
+    checkout_local_branch: true
 clean_workspace: true
+downstream:
+  - docker-confluence-master
+  - docker-confluence-staging
+  - docker-confluence-stable
 
 extra_jobs:
-    - name: docker-confluence-daily
+    - name: docker-confluence-master
       builders:
         - docker
-      docker_name: eduix/confluence
       docker_skip_tag_as_latest: false
       git:
         branch: master
-        extensions:
-            checkout_local_branch: true
       triggers:
         github_push: false
         cron: "@daily"
+      downstream: []
+    - name: docker-confluence-staging
+      builders:
+        - docker
+      git:
+        branch: staging
+      downstream: []
+    - name: docker-confluence-stable
+      builders:
+        - docker
+      git:
+        branch: stable
+      downstream: []
