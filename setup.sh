@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# REMOVE LATER: Test ci setup
+
 set -e
 set -x
 
