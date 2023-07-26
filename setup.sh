@@ -7,7 +7,7 @@ export DEBIAN_FRONTEND noninteractive
 
 # Update the image and install the needed tools
 apt-get update && \
-    apt-get -y dist-upgrade && \
+#    apt-get -y dist-upgrade && \
     apt-get install -y \
         ssl-cert\
     && apt-get -y autoremove \
