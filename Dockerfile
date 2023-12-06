@@ -1,6 +1,6 @@
 # The tags that are recommended to be used for
 # the base image are: latest, staging, stable
-FROM docker.sunet.se/eduix/eduix-base:staging
+FROM docker.sunet.se/eduix/eduix-base:master
 MAINTAINER Jarkko Leponiemi "jarkko.leponiemi@eduix.fi"
 
 # Setup useful environment variables
